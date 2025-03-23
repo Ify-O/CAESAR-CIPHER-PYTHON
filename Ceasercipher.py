@@ -2,3 +2,7 @@
 def getDoubleAlphabet(alphabet):
     doubleAlphabet = alphabet + alphabet
     return doubleAlphabet
+# Example usage
+sample_input = "ABC"
+result = getDoubleAlphabet(sample_input)
+print(result)
