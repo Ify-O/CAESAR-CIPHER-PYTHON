@@ -37,3 +37,8 @@ def encryptMessage(message, cipherKey, alphabet):
         else:
             encryptedMessage = encryptedMessage + currentCharacter
     return encryptedMessage
+# Decrypting a message
+#Reuse the `encryptMessage()` function for `decryptMessage()` by passing a negative cipher key to shift each letter back and reverse the encryption.
+def decryptMessage(message, cipherKey, alphabet):
+    decryptKey = -1 * int(cipherKey)
+    return encryptMessage(message, decryptKey, alphabet)
