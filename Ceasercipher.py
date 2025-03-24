@@ -15,16 +15,6 @@ def getMessage():
 def getCipherKey():
     shiftAmount = input( "Please enter a key (whole number from 1-25): ")
     return shiftAmount
-#Encrypting a message
-#Planning out the algorithm
-#Take three arguments: the message, the cipherKey, and the alphabet.
-# Initialize variables.
-#Use a for loop to traverse each letter in the message.
-#For a specific letter, find the position.
-#For a specific letter, determine the new position given the cipher key.
-# If current letter is in the alphabet, append the new letter to the encrypted message.
-#If current letter is not in the alphabet, append the current letter.
-# Return the encrypted message after exhausting all the letters in the message.
 def encryptMessage(message, cipherKey, alphabet):
     encryptedMessage = ""
     uppercaseMessage = ""
@@ -32,24 +22,16 @@ def encryptMessage(message, cipherKey, alphabet):
     for currentCharacter in uppercaseMessage:
         position = alphabet.find(currentCharacter)
         newPosition = position + int(cipherKey)
-        if currentCharacter in alphabet:
-            encryptedMessage = encryptedMessage + alphabet[newPosition]
-        else:
-            encryptedMessage = encryptedMessage + currentCharacter
+    if currentCharacter in alphabet:
+        encryptedMessage = encryptedMessage + alphabet[newPosition]
+    else:
+        encryptedMessage = encryptedMessage + currentCharacter
     return encryptedMessage
 # Decrypting a message
 #Reuse the `encryptMessage()` function for `decryptMessage()` by passing a negative cipher key to shift each letter back and reverse the encryption.
 def decryptMessage(message, cipherKey, alphabet):
     decryptKey = -1 * int(cipherKey)
     return encryptMessage(message, decryptKey, alphabet)
-# Creating a main function
-# Logic
-# Define a string variable to contain the English alphabet.
-# To be able to shift letters, double your alphabet string.
-#  Get a message to encrypt from the user.
-# Get a cipher key from the user.
-# Encrypt the message.
-# Decrypt the message.
 def runCaesarCipherProgram():
     myAlphabet="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     print(f'Alphabet: {myAlphabet}')
@@ -63,3 +45,4 @@ def runCaesarCipherProgram():
     print(f'Encrypted Message: {myEncryptedMessage}')
     myDecryptedMessage = decryptMessage(myEncryptedMessage, myCipherKey, myAlphabet2)
     print(f'Decypted Message: {myDecryptedMessage}')
+runCaesarCipherProgram()
